@@ -1,0 +1,507 @@
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+body {
+  /* min-height: 100vh; */
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: "ItalianPlateNo4Display-Medium";
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+@font-face {
+  font-family: "ItalianPlateNo2-Regular";
+  src: url("fonts/ItalianPlateNo2-Black.otf") format("embedded-opentype");
+  src: url("fonts/PT-Sans.eot?#iefix") format("embedded-opentype");
+}
+@font-face {
+  font-family: "ItalianPlateNo2-Demibold";
+  src: url("fonts/ItalianPlateNo2-Demibold.otf") format("embedded-opentype");
+  src: url("fonts/PT-Sans.eot?#iefix") format("embedded-opentype");
+}
+@font-face {
+  font-family: "ItalianPlateNo2-Regular";
+  src: url("fonts/ItalianPlateNo2-Regular.otf") format("embedded-opentype");
+  src: url("fonts/PT-Sans.eot?#iefix") format("embedded-opentype");
+}
+@font-face {
+  font-family: "IItalianPlateNo4-Black";
+  src: url("fonts/ItalianPlateNo4-Black.otf") format("embedded-opentype");
+  src: url("fonts/PT-Sans.eot?#iefix") format("embedded-opentype");
+}
+@font-face {
+  font-family: "ItalianPlateNo4Display-Bold";
+  src: url("fonts/ItalianPlateNo4Display-Bold.otf") format("embedded-opentype");
+  src: url("fonts/PT-Sans.eot?#iefix") format("embedded-opentype");
+}
+@font-face {
+  font-family: "ItalianPlateNo4-Regular";
+  src: url("fonts/ItalianPlateNo4-Regular.otf") format("embedded-opentype");
+  src: url("fonts/PT-Sans.eot?#iefix") format("embedded-opentype");
+}
+@font-face {
+  font-family: "ItalianPlateNo4Display-Medium";
+  src: url("fonts/ItalianPlateNo4Display-Medium.otf")
+    format("embedded-opentype");
+  src: url("fonts/PT-Sans.eot?#iefix") format("embedded-opentype");
+}
+
+/* resets */
+
+/* nav {
+  display: flex;
+  align-items: center;
+  gap: 3vmin;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+} */
+
+/* main {
+  min-height: (100vh - 24px - 78px);
+} */
+
+header {
+  height: 100vh;
+  background-image: url(images/vivian-side-cake.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  font-family: "ItalianPlateNo4-Regular";
+  color: #ccc;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-family: "ItalianPlateNo4Display-Bold";
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.mid_logo {
+  display: inline-block;
+  padding-top: 6rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  margin: 0 5rem 0 5rem;
+  gap: 2rem;
+}
+
+body {
+  /* height: 100vh; */
+  /* width: 100vw; */
+  margin: 0rem;
+}
+
+#about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 25px black solid;
+  border-image-source: url(images/bg1.jpg);
+  border-image-slice: 50;
+  /* background-image: url(images/bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover; */
+}
+
+.about_content {
+  /* display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(4rem, 100%), 1fr));
+  justify-items: center;
+  align-content: center;
+  gap: 1rem; */
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.about_content img {
+  object-fit: contain;
+  object-position: center;
+  width: 20%;
+  box-shadow: -4px 4px 10px 1px #906f57;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 40%;
+  font-size: 17px;
+}
+
+.form_section img {
+  box-shadow: -4px 4px 10px 1px #906f57;
+}
+
+#dishes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* .dishes .track {
+} */
+
+#image-track {
+  display: flex;
+  gap: 0.5vmin;
+  user-select: none; /* -- Prevent image highlighting -- */
+}
+
+#image-track > .image {
+  width: 40vmin;
+  height: 56vmin;
+  object-fit: cover;
+  object-position: 100% center;
+}
+
+#reviews {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.clients {
+  /* display: flex;
+  gap: 3rem; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(10rem, 100%), 1fr));
+  gap: 3rem;
+  align-items: start;
+}
+
+.client {
+  display: grid;
+  justify-items: center;
+  column-gap: 1rem;
+  row-gap: 0.3rem;
+}
+
+.client p {
+  padding: 1rem;
+  width: 100%;
+}
+
+/* ---------------------------------------------------- */
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+/* Flexbox styling for the form section */
+.form_section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* height: 100vh; */
+}
+
+/* Styling for the form container */
+.form {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the label element */
+.form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Styling for the input and textarea elements */
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background-color: #f2f2f2;
+}
+
+/* Styling for the input and textarea elements when focused */
+.form input:focus,
+.form textarea:focus {
+  outline: none;
+  border-bottom-color: #64c2a6;
+}
+
+/* Styling for the submit button */
+.form button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #64c2a6;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+/* Styling for the submit button when hovered */
+.form button[type="submit"]:hover {
+  background-color: #4da185;
+}
+
+.form_section img {
+  width: 40%;
+}
+
+/* ------------------------------------------------------- */
+footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 5rem;
+  align-items: center;
+  bottom: 0;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.mid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.mid img {
+  width: 50%;
+}
+
+.right {
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* ---------------------------------------------------- */
+/* base styles */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  padding: 50px 50px;
+  /* color: #fff; */
+  font-size: 24px;
+  gap: 1rem;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+@media screen and (max-width: 810px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 20px 0 0 0;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  nav li {
+    margin: 10px 0;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+  }
+
+  .menu-nav-active {
+    display: flex;
+  }
+
+  .mid_logo {
+    width: 40%;
+    padding-top: 4rem;
+  }
+
+  .about_content {
+    flex-direction: column;
+  }
+  .about_content img {
+    width: 90%;
+    margin-top: 2rem;
+  }
+  .text {
+    width: 90%;
+    padding-bottom: 2rem;
+  }
+
+  #contact h1 {
+    font-size: 32px;
+  }
+  .form_section {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .form_section img {
+    width: 77%;
+  }
+
+  .mid {
+    width: 30%;
+    text-align: center;
+  }
+
+  .right {
+    justify-content: center;
+  }
+
+  .clients {
+    gap: 0;
+  }
+
+  .menu-nav-active {
+    color: #ed9716;
+    background-color: whitesmoke;
+  }
+  .menu-toggle {
+    color: #ed9716;
+    font-size: 55px;
+  }
+}
+
+@media screen and (max-width: 428px) {
+  nav {
+    padding: 20px 20px;
+  }
+
+  nav ul li a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  header .mid-log {
+    padding-top: 3rem;
+  }
+
+  header {
+    background-image: url(images/hero_bg_small.jpg);
+  }
+
+  .container {
+    margin: 0;
+  }
+
+  .clients {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #contact h1 {
+    text-align: center;
+  }
+
+  footer {
+    flex-direction: column;
+    margin: 2rem 0 2rem 0;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .mid img {
+    width: 100%;
+  }
+  .right {
+    justify-content: center;
+  }
+  .menu-nav-active {
+    color: #ed9716;
+    background-color: whitesmoke;
+  }
+
+  .menu-toggle {
+    color: #ed9716;
+    font-size: 55px;
+    background-color: black;
+  }
+}
+/* Default styles
+
+/* ----------------------------------- */

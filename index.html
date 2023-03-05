@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="reset.css" /> -->
+    <!-- <link rel="stylesheet" href="otherstyle.css" /> -->
+    <link rel="stylesheet" href="style.css" />
+    <title>ACEN</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <img src="images/footer-logo-solo.svg" alt="">
+        <ul class="menu-nav">
+          <li><a href="#about">About</a></li>
+          <li><a href="#dishes">Dishes</a></li>
+          <li><a href="#reviews">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="menu-toggle">&#9776;</div>
+      </nav>
+      <img class="mid_logo" src="images/Logo-transparent.svg" alt="">
+    </header>
+    <main class="container">
+      <section class="hero">
+
+      </section>
+      <section id="about">
+        <!-- <h1>Who I am</h1> -->
+        <div class="about_content">
+          <img src="images/spices-on-top.png" alt="" />
+          <div class="text">
+          <p>
+            Hello and welcome to Vivian's Gourmet Catering! My name is Vivian
+            Andersen and I'm a passionate and professional gourmet chef with 7
+            years of experience in creating delicious dishes from various
+            cuisines.</p>
+            <p>I specialize in French cuisine but I can also whip up any recipe on
+            demand, from appetizers to desserts. Whether you're hosting a
+            birthday party, a romantic dinner, or a corporate event, I can make
+            it memorable with my mouthwatering menus and impeccable service.</p>
+           <p> I will take care of everything for you: from procuring the freshest
+            ingredients to cooking them in your own kitchen to cleaning up
+            afterwards. All you have to do is sit back and enjoy the food with
+            your guests. </p> <p>I'm also flexible and open to any suggestions or
+            requests that fit within your budget and preferences.</p><p>
+            I love exploring new flavors and cultures through food and sharing
+            them with others.</p><p>
+            If you're looking for a unique and personalized culinary experience,
+            look no further than Vivian's Gourmet Catering!
+          </p>
+        </div>
+        </div>
+      </section>
+      <section id="dishes">
+        <h1>Some of my dishes</h1>
+        <div
+          id="image-track"
+          class="track"
+          data-mouse-down-at="0"
+          data-prev-percentage="0"
+        >
+          <img class="image" src="images/img_1.png" alt="" draggable="false" />
+          <img class="image" src="images/img_2.png" alt="" draggable="false" />
+          <img class="image" src="images/img_3.png" alt="" draggable="false" />
+          <img class="image" src="images/img_4.png" alt="" draggable="false" />
+          <img class="image" src="images/img_5.png" alt="" draggable="false" />
+          <img class="image" src="images/img_6.png" alt="" draggable="false" />
+          <img class="image" src="images/img_7.png" alt="" draggable="false" />
+          <img class="image" src="images/img_8.png" alt="" draggable="false" />
+          <img class="image" src="images/img_9.png" alt="" draggable="false" />
+          <img class="image" src="images/img_10.png" alt="" draggable="false" />
+        </div>
+      </section>
+      <section id="reviews">
+        <h1>What my clients say</h1>
+        <div class="clients">
+        <div class="client">
+        
+              <img src="images/client-1.png" alt="image of the client" />
+              <strong>Carol</strong>
+              <p>Nærum</p>
+       
+            <p>
+              As soon as Vivian came through the door, I knew we were going to
+              love her. Vivian is a very competent and confident chef. The food
+              she made for our party of 10 was delicious from snack to desert. It
+              couldnt have been better. Definitely not the last time we book her
+              xx
+            </p>
+        </div>
+          <div class="client">
+       
+              <img src="images/client-2.png" alt="image of the client" />
+              <strong>Karolina M.</strong>
+              <p>København Ø</p>
+        
+            <p>
+              Vi havde Vivian ude til en tiltrængt brunch, og hun skuffede ikke
+              selvom der var store forventning til især Eggs Benedict. Udover
+              dejlig mad havde hun en meget behagelig personlighed, og gled let
+              ind i selskabet. Så man ikke på noget tidspunkt følte det akavet
+              (som jeg tænker er en frygt for mange). Som bonus reddede hun en
+              skræntende surdej vi havde stående med et par gode råd :)
+            </p>
+          </div>
+          <div class="client">
+          
+              <img src="images/client-3.png" alt="image of the client" />
+              <strong>Ragna C.</strong>
+              <p>Marielyst</p>
+      
+            <p>
+              Fremragende aften. Maden var udsøgt og Vivian var behagelig at have
+              i hjemmet - jeg kan kun give mine varmeste anbefalinger. Endvidere
+              tilpassede Vivian timing af retterne efter vores datters sengetid,
+              således min kone og jeg kunne nyde hovedretten i fred og ro. Vi vil
+              klart anbefale Vivian til vores venner.
+            </p>
+          </div>
+        </div>
+    </div>
+    </section>
+      <section id="contact">
+        <h1>Let’s get in touch and plan your perfect menu!</h1>
+        <div class="form_section">
+        <img src="images/Capture.png" alt="">
+        <div class="form">
+            <form id="contact-form">
+                <div>
+                  <label for="name">Name:</label>
+                  <input type="text" id="name" name="name" required />
+                </div>
+                <div>
+                  <label for="email">Email:</label>
+                  <input type="email" id="email" name="email" required />
+                  <span id="email-validation"></span>
+                </div>
+                <div>
+                  <label for="phone">Phone:</label>
+                  <input type="tel" id="phone" name="phone" required />
+                </div>
+                <div>
+                  <label for="message">Message:</label>
+                  <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit">Submit</button>
+              </form>
+        </div>
+    </div>
+</div>
+      </section>
+    </main>
+    <footer>
+        <div class="left">
+            <p>vivian@acen.dk</p>
+            <p>+45 50 13 13 58</p>
+            <p>CVR: 28 25 45 78</p>
+        </div>
+        <div class="mid">
+            <img src="images/sml-logo.svg" alt="">
+            <p>© 2023 ACEN - Fine Dining - Final Exam - KEA</p>
+        </div>
+        <div class="right">
+            <img src="images/InstagramIcon.png" alt="">
+            <img src="images/FacebookIcon.png" alt="">
+            <img src="images/LinkedInIcon.png" alt="">
+            <img src="images/YouTubeIcon.png" alt="">
+        </div>
+    </footer>
+    <!-- <script src="js.js"></script> -->
+    <script src="js2.js"></script>
+  </body>
+</html>

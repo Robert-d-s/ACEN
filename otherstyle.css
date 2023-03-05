@@ -1,0 +1,54 @@
+/* *,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+} */
+
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* .dishes {
+  position: relative;
+} */
+
+#image-track {
+  display: flex;
+  gap: 4vmin;
+  /* position: absolute; */
+  left: 50%;
+  top: 50%;
+  /* transform: translate(0%, -50%); */
+  user-select: none;
+  /* z-index: -1; */
+}
+
+#image-track .image {
+  width: 40vmin;
+  height: 56vmin;
+  object-fit: cover;
+  object-position: 100% center;
+}
