@@ -490,6 +490,10 @@ footer p {
     color: #ed9716;
     font-size: 55px;
   }
+
+  .clients {
+    gap: 3rem;
+  }
 }
 
 @media screen and (max-width: 428px) {
