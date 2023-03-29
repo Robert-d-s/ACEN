@@ -1,10 +1,11 @@
+/* Set box-sizing and scroll-behavior for all elements */
 *,
 *:after,
 *:before {
   box-sizing: border-box;
   scroll-behavior: smooth;
 }
-
+/* Set margins, padding, and font-weight to 0 for various elements */
 body,
 h1,
 h2,
@@ -19,61 +20,58 @@ ul {
   padding: 0;
   font-weight: normal;
 }
-
+/* Remove list-style from all unordered and ordered lists */
 ol,
 ul {
   list-style: none;
 }
-
+/* Set text-rendering, line-height, and font-family for the body */
 body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-  font-family: "ItalianPlateNo4Display-Medium";
+  font-family: "ItalianPlateNo2-Regular", sans-serif;
 }
-
+/* Set max-width and display to block for all images and picture elements */
 img,
 picture {
   max-width: 100%;
   display: block;
 }
-
+/* Set the base font-size using the :root pseudo-class */
+:root {
+  font-size: 16px;
+}
+/* Define font-faces for various custom fonts */
 @font-face {
-  font-family: "ItalianPlateNo2-Regular";
-  src: url("fonts/ItalianPlateNo2-Black.otf") format("embedded-opentype");
-  src: url("fonts/PT-Sans.eot?#iefix") format("embedded-opentype");
+  font-family: "ItalianPlateNo2-Black";
+  src: url("fonts/ItalianPlateNo2-Black.otf") format("opentype");
 }
 @font-face {
   font-family: "ItalianPlateNo2-Demibold";
-  src: url("fonts/ItalianPlateNo2-Demibold.otf") format("embedded-opentype");
-  src: url("fonts/PT-Sans.eot?#iefix") format("embedded-opentype");
+  src: url("fonts/ItalianPlateNo2-Demibold.otf") format("opentype");
 }
 @font-face {
   font-family: "ItalianPlateNo2-Regular";
-  src: url("fonts/ItalianPlateNo2-Regular.otf") format("embedded-opentype");
-  src: url("fonts/PT-Sans.eot?#iefix") format("embedded-opentype");
+  src: url("fonts/ItalianPlateNo2-Regular.otf") format("opentype");
 }
 @font-face {
   font-family: "IItalianPlateNo4-Black";
-  src: url("fonts/ItalianPlateNo4-Black.otf") format("embedded-opentype");
-  src: url("fonts/PT-Sans.eot?#iefix") format("embedded-opentype");
+  src: url("fonts/ItalianPlateNo4-Black.otf") format("opentype");
 }
 @font-face {
   font-family: "ItalianPlateNo4Display-Bold";
-  src: url("fonts/ItalianPlateNo4Display-Bold.otf") format("embedded-opentype");
-  src: url("fonts/PT-Sans.eot?#iefix") format("embedded-opentype");
+  src: url("fonts/ItalianPlateNo4Display-Bold.otf") format("opentype");
 }
 @font-face {
   font-family: "ItalianPlateNo4-Regular";
-  src: url("fonts/ItalianPlateNo4-Regular.otf") format("embedded-opentype");
-  src: url("fonts/PT-Sans.eot?#iefix") format("embedded-opentype");
+  src: url("fonts/ItalianPlateNo4-Regular.otf") format("opentype");
 }
 @font-face {
   font-family: "ItalianPlateNo4Display-Medium";
   src: url("fonts/ItalianPlateNo4Display-Medium.otf")
     format("embedded-opentype");
-  src: url("fonts/PT-Sans.eot?#iefix") format("embedded-opentype");
 }
-
+/* Styling for the header section */
 header {
   height: 100vh;
   background-image: url(images/vivian-side-cake.png);
@@ -81,32 +79,31 @@ header {
   background-position: center;
   background-size: cover;
   text-align: center;
-  font-family: "ItalianPlateNo4-Regular";
+  font-family: "ItalianPlateNo4Display-Medium";
   color: #ccc;
   text-transform: uppercase;
 }
-
+/* Styling for the menu navigation container */
 .menu-nav-container {
   position: fixed;
   top: 20px;
   right: 20px;
   z-index: 1000;
+  background-color: #0000008f;
+  padding: 0 2rem;
+  border-radius: 20px;
 }
-
+/* Styling for the menu navigation */
 .menu-nav {
   text-align: right;
 }
-
-/* main {
-  padding-top: 100px;
-} */
-
+/* Styling for links in the menu navigation */
 .menu-nav a {
   position: relative;
   text-decoration: none;
   transition: color 0.3s;
 }
-
+/* Styling for links in the menu navigation when hovered over */
 .menu-nav a:hover {
   color: #ed9716;
 }
@@ -128,16 +125,23 @@ header {
   visibility: visible;
   transform: scaleX(1);
 }
+/* Styling for the nth child of the fourth li element in the navigation list */
+nav ul li:nth-child(4) {
+  color: #ed9716;
+}
+
+section span {
+  color: #ed9716;
+}
 
 h1 {
-  font-family: "ItalianPlateNo4Display-Bold";
-  font-size: 36px;
-  font-weight: 800;
+  font-family: "ItalianPlateNo2-Demibold";
+  font-size: 2.25rem;
 }
 
 .mid_logo {
   display: inline-block;
-  padding-top: 6rem;
+  padding-top: 4.5rem;
 }
 
 .container {
@@ -145,7 +149,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   align-content: center;
-  margin: 0 5rem 0 5rem;
+  margin: 0 5%;
   gap: 2rem;
 }
 
@@ -157,9 +161,21 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 25px black solid;
-  border-image-source: url(images/bg1.jpg);
-  border-image-slice: 50;
+  border: 0.5rem solid transparent;
+  background-clip: padding-box;
+  animation: border-animation 5s infinite;
+}
+
+@keyframes border-animation {
+  0% {
+    box-shadow: 0 0 0 0 #f7b267;
+  }
+  50% {
+    box-shadow: 0 0 0 10px #f7b267;
+  }
+  100% {
+    box-shadow: 0 0 0 0 #f7b267;
+  }
 }
 
 .about_content {
@@ -173,7 +189,8 @@ body {
 .about_content img {
   object-fit: contain;
   object-position: center;
-  min-width: 20%;
+  width: 90%;
+  max-width: 400px;
 }
 
 .text {
@@ -182,8 +199,10 @@ body {
   align-items: start;
   justify-content: center;
   gap: 0.5rem;
-  width: 40%;
-  font-size: 17px;
+  width: 90%;
+  max-width: 500px;
+  font-size: 1.0625rem;
+  font-family: "ItalianPlateNo2-Regular";
 }
 
 .form_section img {
@@ -199,7 +218,6 @@ body {
 
 #image-track {
   display: flex;
-  gap: 0.5vmin;
   user-select: none;
 }
 
@@ -220,7 +238,7 @@ body {
 .clients {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(10rem, 100%), 1fr));
-  gap: 3rem;
+  gap: 2rem;
   align-items: start;
 }
 
@@ -234,6 +252,11 @@ body {
 .client p {
   padding: 1rem;
   width: 100%;
+  font-family: "ItalianPlateNo2-Regular";
+}
+
+strong {
+  font-size: 1.375rem;
 }
 
 /* ---------------------------------------------------- */
@@ -245,61 +268,53 @@ body {
   gap: 1.5rem;
 }
 
-/* Flexbox styling for the form section */
 .form_section {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* height: 100vh; */
 }
 
-/* Styling for the form container */
 .form {
   width: 100%;
-  max-width: 500px;
+  max-width: 31.25rem;
   margin: 0 auto;
-  padding: 20px;
+  padding: 1.25rem;
   background-color: white;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Styling for the label element */
 .form label {
   display: block;
-  margin-bottom: 10px;
+  margin-bottom: 0.625rem;
   font-weight: bold;
 }
 
-/* Styling for the input and textarea elements */
 .form input,
 .form textarea {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
+  padding: 0.625rem;
+  margin-bottom: 1.25rem;
   border: none;
   border-bottom: 1px solid #ccc;
   background-color: #f2f2f2;
 }
 
-/* Styling for the input and textarea elements when focused */
 .form input:focus,
 .form textarea:focus {
   outline: none;
   border-bottom-color: #64c2a6;
 }
 
-/* Styling for the submit button */
 .form button[type="submit"] {
   display: block;
   width: 100%;
-  padding: 10px;
+  padding: 0.625rem;
   background-color: #64c2a6;
   color: white;
   border: none;
   cursor: pointer;
 }
 
-/* Styling for the submit button when hovered */
 .form button[type="submit"]:hover {
   background-color: #4da185;
 }
@@ -320,18 +335,18 @@ footer {
 .left {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.125rem;
 }
 
 .mid {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.625rem;
   align-items: center;
 }
 
 .mid img {
-  width: 50%;
+  width: 40%;
 }
 
 .right {
@@ -340,7 +355,6 @@ footer {
 }
 
 /* ---------------------------------------------------- */
-/* base styles */
 
 nav {
   display: flex;
@@ -359,7 +373,7 @@ nav ul {
 }
 
 nav li {
-  margin-right: 20px;
+  margin: 5px 20px;
 }
 
 nav ul li a {
@@ -369,6 +383,10 @@ nav ul li a {
 
 .menu-toggle {
   display: none;
+}
+
+footer p {
+  font-family: "ItalianPlateNo2-Regular";
 }
 
 @media screen and (max-width: 810px) {
@@ -458,6 +476,8 @@ nav ul li a {
   }
 
   .clients {
+    display: flex;
+    flex-direction: column;
     gap: 0;
   }
 

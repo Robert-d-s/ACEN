@@ -22,31 +22,39 @@ const handleOnMove = (e) => {
 
   const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX;
   const maxDelta = track.offsetWidth / 2;
-  const totalImagesWidth = getTotalImagesWidth();
-  const trackWidth = track.offsetWidth;
-  const maxAllowedTranslation = trackWidth - totalImagesWidth;
 
-  const translation = (mouseDelta / maxDelta) * -100,
-    nextTranslationUnconstrained =
-      parseFloat(track.dataset.prevPercentage) + translation,
-    nextTranslation = Math.max(
-      Math.min(nextTranslationUnconstrained, 0),
-      (maxAllowedTranslation / trackWidth) * 100
-    );
+  const percentage = (mouseDelta / maxDelta) * -100,
+    nextPercentageUnconstrained =
+      parseFloat(track.dataset.prevPercentage) + percentage;
 
-  track.dataset.percentage = nextTranslation;
+  const images = track.getElementsByClassName("image");
+  const totalImagesWidth = Array.from(images).reduce(
+    (acc, img) => acc + img.clientWidth,
+    0
+  );
+  const containerWidth = track.clientWidth;
+
+  const maxNegativePercentage =
+    -((totalImagesWidth - containerWidth) / containerWidth) * 100;
+
+  const nextPercentage = Math.max(
+    Math.min(nextPercentageUnconstrained, 0),
+    maxNegativePercentage
+  );
+
+  track.dataset.percentage = nextPercentage;
 
   track.animate(
     {
-      transform: `translate(${nextTranslation}%)`,
+      transform: `translate(${nextPercentage}%)`,
     },
     { duration: 1200, fill: "forwards" }
   );
 
-  for (const image of track.getElementsByClassName("image")) {
+  for (const image of images) {
     image.animate(
       {
-        objectPosition: `${100 + nextTranslation}% center`,
+        objectPosition: `${100 + nextPercentage}% center`,
       },
       { duration: 1200, fill: "forwards" }
     );
@@ -155,3 +163,59 @@ function animateMenu(element, start, end) {
 }
 
 // -----------------------------------------------------
+// document.addEventListener("DOMContentLoaded", function () {
+//   const menuNav = document.querySelector(".menu-nav");
+//   const headerHeight = menuNav.offsetHeight;
+//   document.documentElement.style.setProperty(
+//     "--header-height",
+//     `${headerHeight}px`
+//   );
+// });
+// document.addEventListener("DOMContentLoaded", function () {
+//   const navLinks = document.querySelectorAll(".nav-link");
+//   const menuNav = document.querySelector(".menu-nav");
+
+//   for (const link of navLinks) {
+//     link.addEventListener("click", function (event) {
+//       event.preventDefault();
+//       const targetId = event.target.getAttribute("href");
+//       const targetElement = document.querySelector(targetId);
+//       const headerHeight = menuNav.offsetHeight;
+//       const targetPosition = targetElement.offsetTop - headerHeight;
+
+//       window.scrollTo({
+//         top: targetPosition,
+//         behavior: "smooth",
+//       });
+//     });
+//   }
+// });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const navLinks = document.querySelectorAll(".nav-link");
+  const menuNav = document.querySelector(".menu-nav");
+
+  for (const link of navLinks) {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+      const targetId = event.target.getAttribute("href");
+      const targetElement = document.querySelector(targetId);
+      const screenWidth = window.innerWidth;
+
+      let headerHeight;
+      if (screenWidth > 810) {
+        headerHeight = menuNav.offsetHeight;
+      } else {
+        // Adjust the height value for smaller screen sizes
+        headerHeight = 200 /* The correct height value for screens <= 810px */;
+      }
+
+      const targetPosition = targetElement.offsetTop - headerHeight;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth",
+      });
+    });
+  }
+});
