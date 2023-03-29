@@ -1,3 +1,9 @@
+// Image slider
+
+// Select the image track element and store it in a constant track.
+// Define a function handleOnDown that takes an event e as a parameter, and sets the mouseDownAt attribute of the track dataset to the event's clientX value.
+// Define a function handleOnUp that sets the mouseDownAt attribute of the track dataset to "0" and updates the prevPercentage attribute with the current percentage value.
+
 const track = document.getElementById("image-track");
 
 const handleOnDown = (e) => (track.dataset.mouseDownAt = e.clientX);
@@ -7,7 +13,8 @@ const handleOnUp = () => {
   track.dataset.prevPercentage = track.dataset.percentage;
 };
 
-// -----------------------------------------------------------
+// Define a function getTotalImagesWidth that calculates the total width of all images within the track and returns it.
+// Define a function handleOnMove that takes an event e as a parameter, and handles moving the image track.
 
 function getTotalImagesWidth() {
   let totalWidth = 0;
@@ -61,7 +68,7 @@ const handleOnMove = (e) => {
   }
 };
 
-// -----------------------------------------------------------------
+// Add event listeners for mousedown, touchstart, mouseup, touchend, mousemove, and touchmove to the element with the ID dishes. Call the appropriate functions for each event.
 
 document.querySelector("#dishes").onmousedown = (e) => handleOnDown(e);
 
@@ -77,7 +84,11 @@ document.querySelector("#dishes").onmousemove = (e) => handleOnMove(e);
 document.querySelector("#dishes").ontouchmove = (e) =>
   handleOnMove(e.touches[0]);
 
-// -----------------------------------------------------------------
+//   Contact form validation and submission:
+//   Select the contact form, email input field, and email validation message elements, storing them in constants.
+// Add a submit event listener to the form that prevents default submission, validates input fields, and displays an alert with the appropriate message.
+// Define a function validateEmail that takes an email string as a parameter and returns a boolean indicating whether the email is valid based on a regex pattern.
+// Add an input event listener to the email input field that validates the email and updates the email validation message accordingly.
 
 const form = document.getElementById("contact-form");
 const emailField = document.getElementById("email");
@@ -117,6 +128,12 @@ emailField.addEventListener("input", (event) => {
   }
 });
 
+// Dynamic main section height calculation:
+// Calculate the heights of the header and footer elements, and store them in constants headerHeight and footerHeight.
+// Calculate the total height of the header and footer by adding their heights and store it in the constant totalHeight.
+// Calculate the main section height by subtracting the totalHeight from the window's inner height, and store it in the constant mainHeight.
+// Set the height of the main section to mainHeight using a template literal.
+
 const headerHeight = document.querySelector("header").offsetHeight;
 const footerHeight = document.querySelector("footer").offsetHeight;
 console.log(headerHeight);
@@ -127,7 +144,11 @@ const mainHeight = window.innerHeight - totalHeight;
 document.querySelector("main").style.height = `${mainHeight}px`;
 console.log(totalHeight);
 
-// -------------------------------------------
+// Mobile menu toggle animation:
+// Add an event listener for the DOMContentLoaded event to ensure that the DOM is fully loaded before executing the script.
+// Select the menu toggle button and menu navigation elements, and store them in constants menuToggle and menuNav.
+// Add a click event listener to the menu toggle button that toggles the menu-nav-active class on the menuNav element and animates the menu sliding in and out based on the current state.
+// Define a function animateMenu that takes an element, a start value, and an end value as parameters, and animates the element's position between the start and end values.
 
 document.addEventListener("DOMContentLoaded", function () {
   const menuToggle = document.querySelector(".menu-toggle");
@@ -162,7 +183,10 @@ function animateMenu(element, start, end) {
   requestAnimationFrame(step);
 }
 
-// -----------------------------------------------------
+// Smooth scrolling to page sections:
+// Add an event listener for the DOMContentLoaded event to ensure that the DOM is fully loaded before executing the script.
+// Select all navigation link elements and the menu navigation element, and store them in constants navLinks and menuNav.
+// Iterate through each navigation link, adding a click event listener that prevents the default link action, calculates the target position based on the target element's offset and header height, and smoothly scrolls to the target position.
 
 document.addEventListener("DOMContentLoaded", function () {
   const navLinks = document.querySelectorAll(".nav-link");
@@ -191,6 +215,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+
+// dark mode toggle
 
 const darkModeToggle = document.getElementById("dark-mode-toggle");
 
