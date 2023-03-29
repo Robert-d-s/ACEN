@@ -144,7 +144,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function animateMenu(element, start, end) {
-  const animationDuration = 400; // Duration in milliseconds
+  const animationDuration = 400;
   const startTime = performance.now();
   const change = end - start;
 
@@ -163,33 +163,6 @@ function animateMenu(element, start, end) {
 }
 
 // -----------------------------------------------------
-// document.addEventListener("DOMContentLoaded", function () {
-//   const menuNav = document.querySelector(".menu-nav");
-//   const headerHeight = menuNav.offsetHeight;
-//   document.documentElement.style.setProperty(
-//     "--header-height",
-//     `${headerHeight}px`
-//   );
-// });
-// document.addEventListener("DOMContentLoaded", function () {
-//   const navLinks = document.querySelectorAll(".nav-link");
-//   const menuNav = document.querySelector(".menu-nav");
-
-//   for (const link of navLinks) {
-//     link.addEventListener("click", function (event) {
-//       event.preventDefault();
-//       const targetId = event.target.getAttribute("href");
-//       const targetElement = document.querySelector(targetId);
-//       const headerHeight = menuNav.offsetHeight;
-//       const targetPosition = targetElement.offsetTop - headerHeight;
-
-//       window.scrollTo({
-//         top: targetPosition,
-//         behavior: "smooth",
-//       });
-//     });
-//   }
-// });
 
 document.addEventListener("DOMContentLoaded", function () {
   const navLinks = document.querySelectorAll(".nav-link");
@@ -206,8 +179,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (screenWidth > 810) {
         headerHeight = menuNav.offsetHeight;
       } else {
-        // Adjust the height value for smaller screen sizes
-        headerHeight = 200 /* The correct height value for screens <= 810px */;
+        headerHeight = 200 /* height value for screens <= 810px */;
       }
 
       const targetPosition = targetElement.offsetTop - headerHeight;
@@ -218,4 +190,10 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   }
+});
+
+const darkModeToggle = document.getElementById("dark-mode-toggle");
+
+darkModeToggle.addEventListener("change", () => {
+  document.body.classList.toggle("dark-mode");
 });
